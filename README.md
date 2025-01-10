@@ -9,7 +9,10 @@
 - **Kelime Öğrenme**: Kullanıcılar verilen kelimelerin anlamlarını öğrenir.
 - **Rastgele Kelime Gösterimi**: Kelimeler rastgele gösterilir.
 - **Renkli Arayüz**: Kelime gösterimi sırasında arka plan renkleri rastgele değişir.
-- **JSON Formatında Veri Yükleme**: Kelimeler ve anlamlar bir JSON dosyasından yüklenebilir.
+- **JSON Formatında Veri Yükleme**: Kelimeler ve anlamlar bir JSON dosyasından yüklenebilir. Kelimeler ve anlamlar, virgülle ayrılmış anlamlı çiftler olarak JSON dosyasına eklenebilir.
+- **İpucu Özelliği**: Her tıklamada kelimenin anlamının harfleri sırasıyla gösterilir. İlk tıklamada tüm harfler gizlenir, ikinci tıklamada ilk harf görünür, sonrasında her tıklamada bir sonraki harf açılır.
+- **Soru ve Cevap Doğrulama**: Kullanıcı, kelimenin anlamını doğru yazarak ilerler. Doğru cevap sonrası bir sonraki kelime gösterilir.
+- **Kelimeler Arası Geçiş**: Her doğru cevap sonrası bir sonraki kelime otomatik olarak yüklenir.
 
 ## Teknolojiler
 - **DevExpress WinForms**: Uygulama, DevExpress'in görsel bileşenlerini kullanarak geliştirildi.
