@@ -14,6 +14,9 @@ namespace QuizApp
         private List<(string Word, string Meaning)> wordsList;
         private (string Word, string Meaning)? currentWord;
         private int lastColorIndex = -1;
+
+private int currentHintCharacterIndex = 0; // Add this field to track hint progress
+        private string currentHintWord = ""; // Add this field to store the current hint word
         private List<System.Drawing.Color> colorList = new List<System.Drawing.Color>
         {
             // DevExpress Renk Paleti
@@ -106,13 +109,66 @@ namespace QuizApp
         }
         private void textEdit1_KeyUp(object sender, KeyEventArgs e)
         {
-            if (currentWord != null && textEdit1.Text.Trim().ToLower() == currentWord.Value.Meaning.ToLower())
+            if (currentWord != null)
             {
-                lblSay.Text = (Convert.ToInt64(lblSay.Text) + 1).ToString();
-                LoadNextWord();
-            }
 
+                if (string.IsNullOrWhiteSpace(textEdit1.Text))
+                {
+                    return;
+                }
+
+                var inputMeanings = textEdit1.Text.Trim().ToLower().Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                                           .Select(m => m.Trim()).ToList();
+
+                var correctMeanings = currentWord.Value.Meaning.ToLower().Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                                            .Select(m => m.Trim()).ToList();
+
+                if (inputMeanings.All(input => correctMeanings.Contains(input)))
+                {
+                    lblSay.Text = (Convert.ToInt64(lblSay.Text) + 1).ToString();
+                    ResetHintState();
+                    LoadNextWord();
+                    
+                }
+            }
         }
+        private void btnIpucu_Click(object sender, EventArgs e)
+        {
+            if (currentWord == null) return;
+
+            if (string.IsNullOrEmpty(currentHintWord) || currentHintCharacterIndex >= currentHintWord.Length)
+            {
+                currentHintCharacterIndex = 0;
+
+                var meanings = currentWord.Value.Meaning.Split(',')
+                    .Select(m => m.Trim())
+                    .Where(m => !string.IsNullOrEmpty(m))
+                    .ToList();
+
+                var random = new Random();
+                currentHintWord = meanings[random.Next(meanings.Count)];
+
+                btnGetir.Text = string.Join(" ", currentHintWord.Select(c => "_"));
+                btnGetir.Visible = true;
+            }
+            else
+            {
+                var displayChars = btnGetir.Text.ToCharArray();
+                int displayIndex = currentHintCharacterIndex * 2; 
+
+                displayChars[displayIndex] = currentHintWord[currentHintCharacterIndex];
+                btnGetir.Text = new string(displayChars);
+                currentHintCharacterIndex++;
+            }
+        }
+        private void ResetHintState()
+        {
+            currentHintCharacterIndex = 0;
+            currentHintWord = "";
+            btnGetir.Text = "";
+            btnGetir.Visible = false;
+        }
+
     }
     public class WordList
     {

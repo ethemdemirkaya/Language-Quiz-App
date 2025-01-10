@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupQuizApp2", "SetupQuizApp2\SetupQuizApp2.vdproj", "{FE5CD617-FF0B-49FE-908D-4ADF2A682C91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE5CD617-FF0B-49FE-908D-4ADF2A682C91}.Debug|Default.ActiveCfg = Debug
+		{FE5CD617-FF0B-49FE-908D-4ADF2A682C91}.Debug|Default.Build.0 = Debug
+		{FE5CD617-FF0B-49FE-908D-4ADF2A682C91}.Release|Default.ActiveCfg = Release
+		{FE5CD617-FF0B-49FE-908D-4ADF2A682C91}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8161B204-D2ED-4B91-B6EF-62EEE97EE800}
+	EndGlobalSection
+EndGlobal
