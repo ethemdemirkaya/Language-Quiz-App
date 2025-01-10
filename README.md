@@ -3,7 +3,7 @@
 **QuizApp**, kullanıcıların kelimeleri ve anlamlarını öğrenebileceği ve test edebileceği bir uygulamadır. Uygulama, JSON formatında bir dosya kullanarak kelimelerle ilgili veri yükler ve bu kelimeleri rastgele bir şekilde gösterir. Kullanıcı, kelimenin anlamını doğru yazarak ilerler. Her doğru cevap sonrasında bir sonraki kelime yüklenir.
 
 ![QuizApp Screenshot](App-Picture-1.png)
-![QuizApp Screenshot 2](App-Picture-2.png)
+![QuizApp Screenshot 2](App-Picture-3.png)
 
 ## Özellikler
 - **Kelime Öğrenme**: Kullanıcılar verilen kelimelerin anlamlarını öğrenir.
